@@ -1,0 +1,112 @@
+/* .header-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 50px;
+
+    .left {
+        display: flex;
+        align-items: center;
+
+        a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-right: 20px;
+        }
+    }
+
+    .right {
+        z-index: 100;
+        background-color: black;
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+    }
+} */
+
+/* Navbar.css */
+
+.header-container {
+    /* Add a fixed position to the navbar */
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+    box-shadow: 0 0 10px transparent;
+  }
+  
+  .left {
+    /* Style the left side of the navbar */
+    display: flex;
+    align-items: center;
+    background-color:transparent;
+  }
+  
+  .left a {
+    /* Style the links on the left side */
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+    transition: color 0.2s ease;
+  }
+  
+  .left a:hover {
+    /* Hover effect for the links */
+    color: #ccc;
+  }
+  
+  .left a.active {
+    /* Active link style */
+    color: #red;
+    text-decoration: underline;
+  }
+  
+  .right {
+    /* Style the right side of the navbar */
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+  }
+  
+  .right button {
+    /* Style the login/logout button */
+    background-color: #337ab7;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .right button:hover {
+    /* Hover effect for the button */
+    background-color: #23527c;
+  }
+  
+  /* Animation for the navbar */
+  .header-container {
+    animation: slideDown 0.5s ease;
+  }
+  
+  @keyframes slideDown {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }

@@ -1,0 +1,6 @@
+node_modules
+Self
+
+dist
+.parcel-cache
+.cache
