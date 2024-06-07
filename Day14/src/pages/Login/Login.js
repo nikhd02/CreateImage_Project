@@ -46,20 +46,15 @@
 
 
 
-import React, { useState, useContext } from 'react'
-import Navbar from '../Navbar/Navbar'
-import './login.css'
-import PointsContext from '../../context/pointsContext'
-import { useNavigate } from 'react-router-dom'
 
 // const Login = () => {
-//   const ctx = useContext(PointsContext);
-//   const [email, setEmail] = useState('');
+    //   const ctx = useContext(PointsContext);
+    //   const [email, setEmail] = useState('');
 //   const [password, setPassword] = useState('');
 //   const navigate = useNavigate();
 
 //   const handleLogin = async () => {
-//     if (!email ||!password) {
+    //     if (!email ||!password) {
 //       return;
 //     }
 //     const response = await fetch(`http://localhost:1010/api/v1/auth/${email}&${password}`);
@@ -100,6 +95,11 @@ import { useNavigate } from 'react-router-dom'
 
 // export default Login;
 
+import React, { useState, useContext } from 'react'
+import Navbar from '../Navbar/Navbar'
+import './login.css'
+import PointsContext from '../../context/pointsContext'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
   const ctx = useContext(PointsContext);
@@ -129,22 +129,22 @@ const Login = () => {
               <h2>Login</h2>
               <form>
                   <div className="input-group">
+                      <label>Email</label>
                       <input
                           type="email"
                           placeholder="Email"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           className="form-input" />
-                      <label>Email</label>
                   </div>
                   <div className="input-group">
+                      <label>Password</label>
                       <input
                           type="password"
                           placeholder="Password"
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
                           className="form-input" />
-                      <label>Password</label>
                   </div>
                   <button className="login-btn" onClick={handleLogin}>
                       {loading ? 'Loading...' : 'Login'}
