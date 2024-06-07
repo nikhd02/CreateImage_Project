@@ -20,13 +20,13 @@
   
   .footer .row {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: nowrap; */
     justify-content: space-between;
   }
   
   .footer .col-md-3 {
     flex-basis: 25%;
-    margin-bottom: 20px;
+    margin-bottom: 0;
   }
   
   .footer h4 {
@@ -41,7 +41,7 @@
   }
   
   .footer li {
-    margin-bottom: 10px;
+    margin-bottom: 0;
   }
   
   .footer a {

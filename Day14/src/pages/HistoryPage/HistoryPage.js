@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from '../Navbar/Navbar'
 import './HistoryPage.css'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import HistoryCard from './HistoryCard'
 
 const HistoryPage = () => {
