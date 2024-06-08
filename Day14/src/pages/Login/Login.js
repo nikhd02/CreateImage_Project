@@ -3,7 +3,7 @@ import React, { useState, useContext } from 'react';
 import Navbar from '../Navbar/Navbar';
 import PointsContext from '../../context/pointsContext';
 import { useNavigate } from 'react-router-dom';
-import './Login.css'; // Make sure to import the CSS file
+import './login.css'; // Make sure to import the CSS file
 
 const Login = () => {
     const ctx = useContext(PointsContext);
