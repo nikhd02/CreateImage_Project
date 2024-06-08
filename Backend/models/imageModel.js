@@ -7,9 +7,9 @@ const imageSchema = new mongoose.Schema({
     },
     userId: {
         type: String,
-        ref:'User',
+        // ref:'User',
         required: [true, 'User Id is required'],
-        // default: 'default-user'
+        default: 'default-user'
 
     },
     image: {
