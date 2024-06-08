@@ -123,10 +123,15 @@ const ImageGenerator = () => {
 
       const d = await res.json();
       console.log(d);
-      if (d?.status === 'success') {
+      if (d?.status === 'uccess') {
+        console.log('Image URL:', d.data.url); // Add this log statement
         setData(d.data.url);
         points.setUserPoints(points.userPoints - 1);
       }
+      // if (d?.status === 'success') {
+      //   setData(d.data.url);
+      //   points.setUserPoints(points.userPoints - 1);
+      // }
     } catch (error) {
       console.error(error);
     }
@@ -142,7 +147,7 @@ const ImageGenerator = () => {
           <button onClick={getData}>Go</button>
         </div>
         {/* If data, display */}
-        {data && <img src={data} alt='' />}
+        {data && <img src={data} alt="Generated Image" />}
       </div>
     </>
   );

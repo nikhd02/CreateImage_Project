@@ -11,7 +11,7 @@ const HistoryCard = (props) => {
             <p>{item.userId}</p>
             <p>{item.createdAt}</p>
             <p>{item.updatedAt}</p>
-            <Link to={`/history/${item.id}`}>more...</Link>
+            <Link to={`./history/${item.id}`}>more...</Link>
         </div>
     )
 }

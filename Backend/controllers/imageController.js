@@ -1,46 +1,72 @@
 const imageModel = require('../models/imageModel');
-const fs = require('fs')
-const path = require('path')
+const fs = require('fs');
+const path = require('path');
+const fetch = require('node-fetch');
 
 const generateImage = async (req, res) => {
-    const { searchText } = req.body
-    let url = ""
-    // const response = await fetch(`https://source.unsplash.com/random/400x400/?${searchText}`);
-    // console.log(response.url)
-    let uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9) + '.png'
+    const { searchText } = req.body;
+    let imageUrl = "";
+    
     try {
-        const response = await fetch(`https://source.unsplash.com/random/400x400/?${searchText}`);
-        url = await response.url;
-
+        const response = await fetch(`https://api.unsplash.com/search/photos/?page=1&per_page=30&query=${searchText}`, {
+            headers: {
+                Authorization: `Client-ID ${process.env.ACCESS_TOKEN}`
+            }
+        });
+        const data = await response.json();
+        const photos = data.results;
+        const randomIndex = Math.floor(Math.random() * photos.length);
+        const randomPhoto = photos[randomIndex];
+        imageUrl = randomPhoto.urls.regular;
     } catch (e) {
-        console.log(e)
+        return res.status(400).json({
+            status: 'fail',
+            message: 'Failed to fetch image'
+        });
     }
 
     const image = new imageModel({
         query: searchText,
-        image: url
-    })
-    await image.save()
+        image: imageUrl
+    });
+
+    await image.save();
 
     res.status(200).json({
         status: 'success',
         message: 'POST Request to /api/v1/images',
         data: {
             searchText,
-            url
+            url: imageUrl
         }
-    })
-}
+    });
+};
 
 const getImages = async (req, res) => {
-    const images = await imageModel.find()
-    console.log(images)
+    const images = await imageModel.find();
+    console.log(images);
     res.status(200).json({
         status: 'success',
         message: 'GET Request to /api/v1/images',
         data: images
-    })
+    });
+};
 
-}
+module.exports = { generateImage, getImages };
 
-module.exports = { generateImage, getImages }
+
+
+
+    // const generateImage = async (req, res) => {
+    //     const { searchText } = req.body
+    //     let url = ""
+    //     // const response = await fetch(`https://source.unsplash.com/random/400x400/?${searchText}`);
+    //     // console.log(response.url)
+    //     let uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9) + '.png'
+    //     try {
+    //         const response = await fetch(`https://source.unsplash.com/random/400x400/?${searchText}`);
+    //         url = await response.url;
+    
+    //     } catch (e) {
+    //         console.log(e)
+    //     }
