@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
-
+import HomePage from './pages/HomePage/HomePage'
 import ImageGenerator from './pages/ImageGenerator/ImageGenerator'
 import HistoryPage from './pages/HistoryPage/HistoryPage'
 import HistoryInformationPage from './pages/HistoryInformationPage/HistoryInformationPage'
