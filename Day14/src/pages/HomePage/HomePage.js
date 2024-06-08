@@ -26,7 +26,7 @@ const HomePage = () => {
         <div className='hero-inner'>
             <h1>Welcome to our website!</h1>
             <p>This is a sample homepage.</p>
-            <button>Learn More</button>
+            {/* <button>Learn More</button> */}
         </div>
       </div>
       {/* <div className="features-section">

@@ -4,7 +4,8 @@ const { generateImage, getImages } = require('../controllers/imageController')
 const imageRouter = express.Router()
 
 imageRouter.route('/')
-    .get(getImages)
     .post(generateImage)
+imageRouter.route('/:userId')
+    .get(getImages)
 
 module.exports = imageRouter

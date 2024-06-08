@@ -1,206 +1,114 @@
-// import React, { useState, useContext } from 'react'
-// import Navbar from '../Navbar/Navbar'
-// import PointsContext from '../../context/pointsContext'
-// import { useNavigate } from 'react-router-dom'
 
-// const Login = () => {
-//     const ctx = useContext(PointsContext)
-//     const [email, setEmail] = useState('')
-//     const [password, setPassword] = useState('')
-//     const navigate = useNavigate()
-
-//     const handleLogin = async () => {
-//         if (!email || !password) {
-//             return
-//         }
-//         const response = await fetch(`http://localhost:1010/api/v1/auth/${email}&${password}`)
-//         const data = await response.json()
-//         if (response.status == 200) {
-//             ctx.setIsLoggedIn(true)
-//             localStorage.setItem('authToken', data.token)
-//             navigate('/image-generator')
-//         }
-//     }
-//     return (
-//         <div>
-//             <Navbar page='login' />
-//             <div>
-//                 <input type='email' placeholder='Email' onChange={(e) => setEmail(e.target.value)} />
-//                 <input type='password' placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
-//                 <button onClick={handleLogin} >Login</button>
-//             </div>
-//         </div>
-//     )
-// }
-
-// export default Login
-
-
-
-import React, { useState, useContext } from 'react'
-import Navbar from '../Navbar/Navbar'
-import PointsContext from '../../context/pointsContext'
-import { useNavigate } from 'react-router-dom'
-import './Login.css'  // Make sure to import the CSS file
+import React, { useState, useContext } from 'react';
+import Navbar from '../Navbar/Navbar';
+import PointsContext from '../../context/pointsContext';
+import { useNavigate } from 'react-router-dom';
+import './Login.css'; // Make sure to import the CSS file
 
 const Login = () => {
-    const ctx = useContext(PointsContext)
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const navigate = useNavigate()
+    const ctx = useContext(PointsContext);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const handleLogin = async () => {
         if (!email || !password) {
-            return
+            return;
         }
-        const response = await fetch(`http://localhost:1010/api/v1/auth/${email}&${password}`)
-        const data = await response.json()
+        const response = await fetch(`http://localhost:1010/api/v1/auth/${email}&${password}`);
+        const data = await response.json();
         if (response.status === 200) {
-            ctx.setIsLoggedIn(true)
-            localStorage.setItem('authToken', data.token)
-            navigate('/image-generator')
+            ctx.setIsLoggedIn(true);
+            localStorage.setItem('authToken', data.token);
+            navigate('/image-generator');
         }
-    }
+    };
 
     return (
-            <><Navbar page='login' />
-            <div className="login-container">
-            <div className="form-container">
-                <input
-                    type='email'
-                    placeholder='Email'
-                    onChange={(e) => setEmail(e.target.value)} />
-                <input
-                    type='password'
-                    placeholder='Password'
-                    onChange={(e) => setPassword(e.target.value)} />
-                <button className="login-btn"onClick={handleLogin}>Login</button>
+        <>
+            <Navbar page="login"/>
+            <div className="signup-container"> {/* Replaced with "signup-container" */}
+                <div className="signup-form"> {/* Replaced with "signup-form" */}
+                    <label className="label">Email</label> {/* Added "label" class */}
+                    <input
+                        className="form-input" // Added "form-input" class
+                        type="email"
+                        placeholder="Email"
+                        onChange={(e) => setEmail(e.target.value)}
+                    /><br></br>
+                    <label className="label">Password</label> {/* Added "label" class */}
+                    <input
+                        className="form-input" // Added "form-input" class
+                        type="password"
+                        placeholder="Password"
+                        onChange={(e) => setPassword(e.target.value)}
+                    /><br></br>
+                    <button className="signup-btn" onClick={handleLogin}> {/* Replaced with "signup-btn" */}
+                        Login
+                    </button>
+                </div>
             </div>
-        </div></>
-    )
-}
+        </>
+    );
+};
 
-export default Login
+export default Login;
 
-
-
-
-// // import React, { useState, useContext } from 'eact';
-// // import Navbar from '../Navbar/Navbar';
-
-// // import PointsContext from '../../context/pointsContext';
-// // import { useNavigate } from 'eact-router-dom';
-
-
-
-
-
-// // const Login = () => {
-//     //   const ctx = useContext(PointsContext);
-//     //   const [email, setEmail] = useState('');
-// //   const [password, setPassword] = useState('');
-// //   const navigate = useNavigate();
-
-// //   const handleLogin = async () => {
-//     //     if (!email ||!password) {
-// //       return;
-// //     }
-// //     const response = await fetch(`http://localhost:1010/api/v1/auth/${email}&${password}`);
-// //     const data = await response.json();
-// //     if (response.status === 200) {
-// //       ctx.setIsLoggedIn(true);
-// //       localStorage.setItem('authToken', data.token);
-// //       navigate('/image-generator');
-// //     }
-// //   };
-
-// //   return (
-// //     <div className="login-container">
-// //       <Navbar page="login" />
-// //       <div className="login-form">
-// //         <h2>Login</h2>
-// //         <input
-// //           type="email"
-// //           placeholder="Email"
-// //           value={email}
-// //           onChange={(e) => setEmail(e.target.value)}
-// //           className="form-input"
-// //         />
-// //         <input
-// //           type="password"
-// //           placeholder="Password"
-// //           value={password}
-// //           onChange={(e) => setPassword(e.target.value)}
-// //           className="form-input"
-// //         />
-// //         <button className="login-btn" onClick={handleLogin}>
-// //           Login
-// //         </button>
-// //       </div>
-// //     </div>
-// //   );
-// // };
-
-// // export default Login;
-
-// import React, { useState, useContext } from 'react'
-// import Navbar from '../Navbar/Navbar'
-// import './login.css'
-// import PointsContext from '../../context/pointsContext'
-// import { useNavigate } from 'react-router-dom'
+// import React, { useState, useContext } from 'react';
+// import Navbar from '../Navbar/Navbar';
+// import PointsContext from '../../context/pointsContext';
+// import { useNavigate } from 'react-router-dom';
+// import Cookies from 'js-cookie';
+// import './Login.css'; // Make sure to import the CSS file
 
 // const Login = () => {
-//   const ctx = useContext(PointsContext);
-//   const [email, setEmail] = useState('');
-//   const [password, setPassword] = useState('');
-//   const navigate = useNavigate();
-//   const [loading, setLoading] = useState(false);
+//     const ctx = useContext(PointsContext);
+//     const [email, setEmail] = useState('');
+//     const [password, setPassword] = useState('');
+//     const navigate = useNavigate();
 
-//   const handleLogin = async () => {
-//     if (!email || !password) {
-//       return;
-//     }
-//     setLoading(true);
-//     const response = await fetch(`http://localhost:1010/api/v1/auth/${email}&${password}`);
-//     const data = await response.json();
-//     if (response.status === 200) {
-//       ctx.setIsLoggedIn(true);
-//       localStorage.setItem('authToken', data.token);
-//       navigate('/image-generator');
-//     }
-//     setLoading(false);
-//   };
+//     const handleLogin = async () => {
+//         if (!email || !password) {
+//             return;
+//         }
+//         const response = await fetch(`http://localhost:1010/api/v1/auth/${email}&${password}`);
+//         const data = await response.json();
+//         if (response.status === 200) {
+//             ctx.setIsLoggedIn(true);
+//             localStorage.setItem('authToken', data.token);
+//             // Set a cookie with the authentication token
+//             Cookies.set('authToken', data.token, { expires: 7 }); // Cookie expires in 7 days
+//             navigate('/image-generator');
+//         }
+//     };
 
-//   return (
-//       <><Navbar /><div className="login-container">
-//           <div className="login-form">
-//               <h2>Login</h2>
-//               <form>
-//                   <div className="input-group">
-//                       <label>Email</label>
-//                       <input
-//                           type="email"
-//                           placeholder="Email"
-//                           value={email}
-//                           onChange={(e) => setEmail(e.target.value)}
-//                           className="form-input" />
-//                   </div>
-//                   <div className="input-group">
-//                       <label>Password</label>
-//                       <input
-//                           type="password"
-//                           placeholder="Password"
-//                           value={password}
-//                           onChange={(e) => setPassword(e.target.value)}
-//                           className="form-input" />
-//                   </div>
-//                   <button className="login-btn" onClick={handleLogin}>
-//                       {loading ? 'Loading...' : 'Login'}
-//                   </button>
-//               </form>
-//           </div>
-//       </div></>
-//   );
+//     return (
+//         <>
+//             <Navbar page="login"/>
+//             <div className="signup-container"> {/* Replaced with "signup-container" */}
+//                 <div className="signup-form"> {/* Replaced with "signup-form" */}
+//                     <label className="label">Email</label> {/* Added "label" class */}
+//                     <input
+//                         className="form-input" // Added "form-input" class
+//                         type="email"
+//                         placeholder="Email"
+//                         onChange={(e) => setEmail(e.target.value)}
+//                     /><br></br>
+//                     <label className="label">Password</label> {/* Added "label" class */}
+//                     <input
+//                         className="form-input" // Added "form-input" class
+//                         type="password"
+//                         placeholder="Password"
+//                         onChange={(e) => setPassword(e.target.value)}
+//                     /><br></br>
+//                     <button className="signup-btn" onClick={handleLogin}> {/* Replaced with "signup-btn" */}
+//                         Login
+//                     </button>
+//                 </div>
+//             </div>
+//         </>
+//     );
 // };
 
 // export default Login;
+

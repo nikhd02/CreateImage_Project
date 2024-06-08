@@ -28,8 +28,6 @@ const Navbar = (props) => {
         { key: 'home', url: '/', name: 'Home' },
         { key: 'image', url: '/image-generator', name: 'Image Generator' },
         { key: 'history', url: '/history', name: 'History' },
-        { key: 'contact', url: '/contact', name: 'Contact' },
-        { key: 'help', url: '/help', name: 'Help' },
         { key: 'signup', url: '/signup', name: 'Sign Up' },
         { key: 'login', url: '/login', name: 'Login' },
     ]
@@ -55,9 +53,9 @@ const Navbar = (props) => {
                 
                 */}
             </div>
-            <div className='right' style={{ color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '20px' }}>
+            {/* <div className='right' style={{ color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '20px' }}>
                 {ctx.userPoints}
-            </div>
+            </div> */}
             <div>
                 {
                     ctx.isLoggedIn ?

@@ -1,19 +1,19 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import './HistoryPage.css'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './HistoryCard.css';
 
 const HistoryCard = (props) => {
-    const item = props.item
+    const { item } = props;
     return (
-        <div key={item.id} className='history-item'>
-            <img src={item.image} alt={item.query} />
+        <div className='history-card'>
             <h3>{item.query}</h3>
-            <p>{item.userId}</p>
-            <p>{item.createdAt}</p>
-            <p>{item.updatedAt}</p>
-            <Link to={`./history/${item.id}`}>more...</Link>
+            <p>User ID: {item.userId}</p>
+            <p>Created At: {new Date(item.createdAt).toLocaleString()}</p>
+            <p>Updated At: {new Date(item.updatedAt).toLocaleString()}</p>
+            <img src={item.image} alt={item.query} />
+            <Link to={`/history/${item.id}`}>more...</Link>
         </div>
-    )
-}
+    );
+};
 
-export default HistoryCard
+export default HistoryCard;
