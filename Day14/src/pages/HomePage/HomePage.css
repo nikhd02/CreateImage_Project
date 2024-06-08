@@ -1,4 +1,4 @@
-.hero-section {
+/* .hero-section {
   background: linear-gradient(135deg, #5c14a9 49%, #2575fc 51%);background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -36,7 +36,7 @@
     text-align: center;
     background-color: #4CAF50;
     color: #fff;
-    /* padding: 10px 20px; */
+    
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -72,4 +72,54 @@
     content: "\2022";
     margin-right: 10px;
     color: #4CAF50;
+  } */
+
+  /* HomePage.css */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('\landing.jpeg') no-repeat center center/cover; /* Optional: add a background image */
+  background-color: #121212; /* Fallback color if the background image doesn't load */
+}
+
+.hero-inner {
+  text-align: center;
+  max-width: 800px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background for better readability */
+  border-radius: 8px;
+}
+
+.hero-inner h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.hero-inner p {
+  font-size: 24px;
+  color: #dddddd;
+}
+
+@media (max-width: 768px) {
+  .hero-inner h1 {
+      font-size: 36px;
   }
+
+  .hero-inner p {
+      font-size: 18px;
+  }
+}
+
+
+  
