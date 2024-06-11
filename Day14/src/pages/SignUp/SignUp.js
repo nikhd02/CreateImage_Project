@@ -44,7 +44,7 @@
 import React, { useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import './signup.css'; // Import your CSS file
-
+require('dotenv').config()
 // const BACKEND_URL = process.env.BACKEND_URL;
 
 const SignUp = () => {
