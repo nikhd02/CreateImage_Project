@@ -1,57 +1,46 @@
-/* .header-container {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: center;
-    padding: 0 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    height: 50px;
-
-    .left {
-        display: flex;
-        align-items: center;
-
-        a {
-            text-decoration: none;
-            color: #333;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-right: 20px;
-        }
-    }
-
-    .right {
-        z-index: 100;
-        background-color: black;
-        border-radius: 50%;
-        height: 30px;
-        width: 30px;
-    }
-} */
-
-/* Navbar.css */
-
 .header-container {
-    /* Add a fixed position to the navbar */
+    
     position: relative;
     top: 0;
     left: 0;
     width: auto;
-    background-color: #333;
+    background-color: #4662df;
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 10000;
-    box-shadow: 0 0 10px transparent;
+    box-shadow: 0 0 10px black;
+    h1 {
+      width: 40px;
+      height: 40px;
+      margin-left: 10px;
+    }
+    a {
+     
+      color: #fff;
+      text-decoration: none;
+      margin-right: 20px;
+      transition: color 0.2s ease;
+    }
+    a:hover {
+      
+      color: #ccc;
+    }
+    a.active {
+      
+      color: red;
+      text-decoration: underline;
+    }
   }
   
   .left {
+
     /* Style the left side of the navbar */
     display: flex;
     align-items: center;
     background-color:transparent;
+    justify-content: space-around;
   }
   
   .left a {
@@ -59,6 +48,7 @@
     color: #fff;
     text-decoration: none;
     margin-right: 20px;
+    font-size: 20px;
     transition: color 0.2s ease;
   }
   
@@ -69,7 +59,7 @@
   
   .left a.active {
     /* Active link style */
-    color: #red;
+    color: red;
     text-decoration: underline;
   }
   

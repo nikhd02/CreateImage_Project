@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import './Navbar.css'
+import { Link } from 'react-router-dom';
 import { Link, useNavigate } from 'react-router-dom'
 import PointsContext from '../../context/pointsContext'
 
@@ -17,7 +18,7 @@ const Navbar = (props) => {
     }
 
     const links = [
-        { key: 'home', url: '/', name: 'Home' },
+        // { key: 'home', url: '/', name: 'Home' },
         { key: 'image', url: '/image-generator', name: 'Image Generator' },
         { key: 'history', url: '/history', name: 'History' },
         { key: 'signup', url: '/signup', name: 'Register' },
@@ -27,8 +28,10 @@ const Navbar = (props) => {
 
     return (
         <div className='header-container'>
-            <div className='left'>
-                {
+            <a href='/'><h1>ADI</h1></a>
+            <div className='left'> 
+                
+                {   
                     links.map(link => {
                         return (
                             <Link key={link.key} style={props.page === link.key ? activeStyle : {}} to={link.url}>{link.name}</Link>

@@ -14,8 +14,26 @@
   width: 350px;
   padding: 40px;
   border-radius: 10px;
-  background-color: #ffffff72; /* White background color with transparency */
+  background-color: #12121281; /* White background color with transparency */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+  p{
+    a {
+     
+      color: #d400ff;
+      text-decoration: none;
+      margin-right: 20px;
+      transition: color 0.2s ease;
+    }
+    a:hover {
+      
+      color: #f70606;
+    }
+    a.active {
+      
+      color: red;
+      text-decoration: underline;
+    }
+  }
 }
 
 .signup-form h2 {
@@ -23,7 +41,7 @@
   align-items: center;
   margin-bottom: 30px;
   text-align: center;
-  color: #333; /* Dark text color */
+  color: #a501c6; /* Dark text color */
 }
 
 .input-group {
@@ -33,7 +51,7 @@
 
 .form-input {
   display: block;
-  width: 100%;
+  width: 90%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -49,8 +67,8 @@
 .label {
   display: block;
   margin-bottom: 5px;
-  font-weight: bold;
-  color: #555; /* Medium-dark text color */
+  font-weight: bolder;
+  color: #ffffff; /* Medium-dark text color */
 }
 
 .signup-btn {
