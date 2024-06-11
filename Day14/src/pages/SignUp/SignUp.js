@@ -45,7 +45,7 @@ import React, { useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import './signup.css'; // Import your CSS file
 
-const BACKEND_URL = process.env.BACKEND_URL;
+// const BACKEND_URL = process.env.BACKEND_URL;
 
 const SignUp = () => {
     const [email, setEmail] = useState('');
