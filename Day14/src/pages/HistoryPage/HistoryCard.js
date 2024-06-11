@@ -18,22 +18,3 @@ const HistoryCard = (props) => {
 
 export default HistoryCard;
 
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-// import './HistoryCard.css';
-
-// const HistoryCard = (props) => {
-//     const { item } = props;
-//     return (
-//         <div className='history-card'>
-//             <h3>{item.query}</h3>
-//             <img src={item.image} alt={item.query} />
-//             <p>User ID: {item.userId}</p>
-//             <p>Created At: {new Date(item.createdAt).toLocaleString()}</p>
-//             <p>Updated At: {new Date(item.updatedAt).toLocaleString()}</p>
-//             <Link to={`/history/${item.id}`}>more...</Link>
-//         </div>
-//     );
-// };
-
-// export default HistoryCard;
