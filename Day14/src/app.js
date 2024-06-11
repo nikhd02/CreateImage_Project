@@ -34,14 +34,6 @@ const App = () => {
             element: <HistoryInformationPage />
         },
         {
-            path: '/contact',
-            element: <div>contact</div>
-        },
-        {
-            path: '/help',
-            element: <div>help</div>
-        },
-        {
             path: '/signup',
             element: <SignUp />
         },
