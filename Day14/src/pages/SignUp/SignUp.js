@@ -55,6 +55,7 @@ const SignUp = () => {
         if (!email || !password) {
             return;
         }
+        const  BACKEND_URL = process.env.BACKEND_URL
         const response = await fetch(`${BACKEND_URL}/api/v1/auth`, {
             method: 'POST',
             headers: {
