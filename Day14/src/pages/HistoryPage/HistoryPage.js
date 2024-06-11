@@ -8,7 +8,7 @@ require('dotenv').config();
 
 function HistoryPage() {
     const [data, setData] = useState([]);
-    const [filteredData, setFilteredData] = useState([]);
+    // const [filteredData, setFilteredData] = useState([]);
     const [search, setSearch] = useState('');
 
     const getData = async () => {
@@ -22,8 +22,9 @@ function HistoryPage() {
                 },
             });
             const obj = await response.json();
+            console.log(obj)
             setData(obj.data);
-            setFilteredData(obj.data); // Initialize filteredData with all data
+            // setFilteredData(obj.data); // Initialize filteredData with all data
         } catch (e) {
             console.log(e);
         }
@@ -32,13 +33,6 @@ function HistoryPage() {
     useEffect(() => {
         getData();
     }, []);
-
-    useEffect(() => {
-        setFilteredData(
-            data.filter(item => item.name.toLowerCase().includes(search.toLowerCase())
-            )
-        );
-    }, [search, data]);
 
     return (
         <div>
@@ -50,10 +44,14 @@ function HistoryPage() {
                         placeholder='Search history...'
                         onChange={(e) => setSearch(e.target.value)} />
                 </div>
-                <div className='history-items'>
-                    {filteredData.map(item => (
-                        <HistoryCard key={item._id} item={item} />
-                    ))}
+                <div className='history-card'>
+                    {
+                        data && data.filter(item => {
+                            return item.query.toLowerCase().includes(search.toLowerCase())
+                        }).map(item => {
+                            return <HistoryCard key={item._id} item={item} />
+                        })
+                    }
                 </div>
             </div>
         </div>
