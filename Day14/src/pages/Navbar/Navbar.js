@@ -28,8 +28,7 @@ const Navbar = (props) => {
         { key: 'home', url: '/', name: 'Home' },
         { key: 'image', url: '/image-generator', name: 'Image Generator' },
         { key: 'history', url: '/history', name: 'History' },
-        { key: 'signup', url: '/signup', name: 'Sign Up' },
-        { key: 'login', url: '/login', name: 'Login' },
+        { key: 'Register', url: '/signup', name: 'Sign Up' },
     ]
 
     const ctx = useContext(PointsContext)
