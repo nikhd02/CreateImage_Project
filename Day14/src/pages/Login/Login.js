@@ -15,7 +15,7 @@ const Login = () => {
         if (!email || !password) {
             return;
         }
-        const response = await fetch(`http://localhost:1010/api/v1/auth/${email}&${password}`);
+        const response = await fetch(`${BACKEND_URL}/api/v1/auth/${email}&${password}`);
         const data = await response.json();
         if (response.status === 200) {
             ctx.setIsLoggedIn(true);

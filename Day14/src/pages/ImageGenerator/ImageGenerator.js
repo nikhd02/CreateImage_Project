@@ -12,7 +12,8 @@ const ImageGenerator = () => {
     const queryValue = document.getElementById('txtQuery').value;
     if (!queryValue) return;
     try {
-      const res = await fetch(`${process.env.BACKEND_URL}/api/v1/images`, {
+      const BACKEND_URL= process.env.BACKEND_URL
+      const res = await fetch(`${BACKEND_URL}/api/v1/images`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
