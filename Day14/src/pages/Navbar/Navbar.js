@@ -16,19 +16,11 @@ const Navbar = (props) => {
         navigate('/login')
     }
 
-    // const linksObj = {
-    //     home: '/',
-    //     image: '/image-generator',
-    //     history: '/history',
-    //     contact: '/contact',
-    //     help: '/help'
-    // }
-
     const links = [
         { key: 'home', url: '/', name: 'Home' },
         { key: 'image', url: '/image-generator', name: 'Image Generator' },
         { key: 'history', url: '/history', name: 'History' },
-        { key: 'Register', url: '/signup', name: 'Sign Up' },
+        { key: 'signup', url: '/signup', name: 'Register' },
     ]
 
     const ctx = useContext(PointsContext)
@@ -43,18 +35,9 @@ const Navbar = (props) => {
                         )
                     })
                 }
-                {/* OR
-                <Link to='/' style={props.page === 'home' ? activeStyle : {}}>Home</Link>
-                <Link to='/image-generator' style={props.page === 'image' ? activeStyle : {}}>Image Generator</Link>
-                <Link to='/history' style={props.page === 'history' ? activeStyle : {}}>History</Link>
-                <Link to='/contact' style={props.page === 'contact' ? activeStyle : {}}>Contact</Link>
-                <Link to='/help' style={props.page === 'help' ? activeStyle : {}}>Help</Link>
-                
-                */}
+           
             </div>
-            {/* <div className='right' style={{ color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '20px' }}>
-                {ctx.userPoints}
-            </div> */}
+            
             <div>
                 {
                     ctx.isLoggedIn ?
