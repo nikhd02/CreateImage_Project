@@ -5,7 +5,7 @@ const imageRouter = express.Router()
 
 imageRouter.route('/')
     .post(generateImage)
-imageRouter.route('/:userId')
+imageRouter.route('/')
     .get(getImages)
 
 module.exports = imageRouter
